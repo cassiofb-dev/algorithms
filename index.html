@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Algorithms</title>
+    <meta charset="UTF-8">
+    <meta name="Description" content="Algorithms in a simple interface">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+    <div class="page-container">
+      <h1>Algorithms</h1>
+      <fieldset>
+        <legend>Select an algorithm</legend>
+          <select name="algorithm" id="algorithms">
+            <option value="" selected disabled hidden>Choose here</option>
+            <option value="reverser">String Reverser</option>
+            <option value="palindrome">Palindrome Checker</option>
+            <option value="wordCounter">Word Counter</option>
+            <option value="wordSorter">Word Sorter</option>
+            <option value="charCounter">Character Counter</option>
+            <option value="charSorter">Character Sorter</option>
+            <option value="roman">Roman Numerical Conversion</option>
+            <option value="caesar">Caesar Cipher ROT13</option>
+            <option value="usphone">US Phone Number Checker</option>
+            <option value="change">US Change Calculator</option>
+          </select>
+        <br><br>
+        <label for="input">Enter the input:</label>
+        <input id="input" type="text"></input>
+      </fieldset>
+      <div class="output-container"><p id="output">The output will be here.</p></div>
+      <hr>
+      <footer>© 2020, Cássio Fernando</footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+body {
+  text-align: center;
+  background: #ccc;
+  padding: 1%;
+}
+
+.page-container {
+  width: 100%;
+  border: 2px solid black;
+}
+
+.output-container {
+  width: 95%;
+  margin: auto;
+  overflow: auto;
+  font-size: 20px;
+}
+
+input {
+  min-width: 50%;
+}
+
+footer {
+  margin: 2% 0 2% 0;
+}
+
+fieldset {
+  margin: 0 2.5% 0 2.5%;
+  padding: 2.5% 0 2.5% 0;
+}
