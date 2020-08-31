@@ -1,5 +1,6 @@
 export default str => {
   const ARR = str.split('').map(x => x.charCodeAt(0)).sort((a,b) => a-b);
+  
   if(ARR.length > 9) return 'Too many permutations!';
 
   // SET = [[value, direction]]
