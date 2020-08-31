@@ -17,11 +17,15 @@ body {
 }
 
 input {
-  min-width: 50%;
+  width: 70vmin;
+}
+
+select {
+  width: 70vmin;
 }
 
 footer {
-  margin: 2% 0 2% 0;
+  margin: 5vmax 0 5vmax 0;
 }
 
 fieldset {

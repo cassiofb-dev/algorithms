@@ -1,7 +1,7 @@
 export default str => {
-  const ARRAY = str.split(''), PERMUTATIONS = [];
+  const ARR = str.split(''), PERMUTATIONS = [];
 
-  if(ARRAY.length > 9) return 'Too many permutations!';
+  if(ARR.length > 9) return 'Too many permutations!';
 
   const generate = (k, [...A]) => { // https://en.wikipedia.org/wiki/Heap%27s_algorithm#Details_of_the_algorithm
     if(k === 1) {
@@ -19,6 +19,6 @@ export default str => {
     }
   };
 
-  generate(ARRAY.length, ARRAY);
+  generate(ARR.length, ARR);
   return PERMUTATIONS.map(x => x.join('')).join('-');
 }
