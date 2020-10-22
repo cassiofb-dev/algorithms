@@ -16,16 +16,15 @@ body {
   font-size: 20px;
 }
 
-input {
-  width: 70vmin;
-}
-
-select {
+input, select {
   width: 70vmin;
 }
 
 footer {
-  margin: 5vmax 0 5vmax 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 fieldset {

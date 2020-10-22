@@ -1,7 +1,7 @@
-const ALGORITHMS = document.querySelector('#algorithms');
-const INPUT = document.querySelector('#input');
-const BENCH = document.querySelector('#bench');
-const OUTPUT = document.querySelector('#output');
+const ALGORITHMS = document.getElementById('algorithms');
+const INPUT = document.getElementById('input');
+const BENCH = document.getElementById('bench');
+const OUTPUT = document.getElementById('output');
 
 let algorithm;
 
