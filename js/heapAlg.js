@@ -1,3 +1,6 @@
+import bench      from './utils/bench.js';
+import outputView from './utils/outputView.js';
+
 export default str => {
   const ARR = str.split(''), PERMUTATIONS = [];
 
@@ -19,6 +22,11 @@ export default str => {
     }
   };
 
+  let time = bench.start();
   generate(ARR.length, ARR);
-  return PERMUTATIONS.map(x => x.join('')).join('-');
+  time = bench.end(time);
+
+  let result = PERMUTATIONS.map(x => x.join('')).join('-');
+  
+  return outputView(result, time);
 }

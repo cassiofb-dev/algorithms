@@ -1,3 +1,6 @@
+import bench      from './utils/bench.js';
+import outputView from './utils/outputView.js';
+
 export default str => {
   if(str.match(/[^0-9\.]/g)) return 'Enter only with numbers';
 
@@ -7,12 +10,15 @@ export default str => {
 
   const PRIME = new Array(SIZE).fill(true), MAX = Math.sqrt(SIZE);
 
+  let time = bench.start();
   let i, j;
-  for(i = 2; i < MAX; i++) {
-    if(PRIME[i]) for(j = i*i; j < SIZE; j += i) PRIME[j] = false;
-  }
-
+  for(i = 2; i < MAX; i++)
+    if(PRIME[i])
+      for(j = i*i; j < SIZE; j += i) PRIME[j] = false;
   for(i = 2; i < SIZE; i++) if(PRIME[i]) LIST.push(i);
+  time = bench.end(time);
 
-  return LIST.join('-');
+  let result = LIST.join('-');
+
+  return outputView(result, time);
 }

@@ -1,3 +1,6 @@
+import bench      from './utils/bench.js';
+import outputView from './utils/outputView.js';
+
 export default str => {
   const ARR = str.split('').map(x => x.charCodeAt(0)).sort((a,b) => a-b);
   
@@ -33,10 +36,14 @@ export default str => {
     for(let i = 0; i < MAX; i++) if(SET[i][0] > SET[mobile][0]) SET[i][1] = -SET[i][1];
   };
 
+  let time = bench.start();
   while(setMobile()) {
     permutate();
     reverse();
   }
+  time = bench.end(time);
 
-  return PERMUTATIONS.map(x => x.map(y => String.fromCharCode(y[0])).join('')).join('-');
+  let result = PERMUTATIONS.map(x => x.map(y => String.fromCharCode(y[0])).join('')).join('-');
+
+  return outputView(result, time);
 }

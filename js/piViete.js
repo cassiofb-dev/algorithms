@@ -1,3 +1,6 @@
+import bench      from './utils/bench.js';
+import outputView from './utils/outputView.js';
+
 export default str => {
   if(str.match(/[^0-9\.]/g)) return 'Enter only with numbers';
 
@@ -13,8 +16,12 @@ export default str => {
     return VIETE[VIETE.length-1];
   }
 
+  let time = bench.start();
   viete(INTERATIONS);
   for(let v of VIETE) double_inversed_pi *= v/2;
+  time = bench.end(time);
 
-  return 2/double_inversed_pi;
+  let result = 2 / double_inversed_pi;
+
+  return outputView(result, time);
 }

@@ -1,3 +1,6 @@
+import bench      from './utils/bench.js';
+import outputView from './utils/outputView.js';
+
 export default str => {
   if(str.match(/[^0-9\.]/g)) return 'Enter only with numbers';
   
@@ -18,6 +21,7 @@ export default str => {
 
   if(value > 10000000) return 'Enter a number between 0 and 1000000000';
   
+  let time = bench.start();
   for(let e in US_CHANGE) {
     while(US_CHANGE[e] <= value) {
       value -= US_CHANGE[e];
@@ -26,6 +30,9 @@ export default str => {
     if(count > 0) CHANGE.push(`${e} TIMES ${count}`);
     count = 0;
   }
+  time = bench.end(time);
 
-  return CHANGE.join(' | ');
+  let result = CHANGE.join(' | ');
+
+  return outputView(result, time);
 }

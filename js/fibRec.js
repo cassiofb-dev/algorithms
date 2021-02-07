@@ -1,3 +1,6 @@
+import bench      from './utils/bench.js';
+import outputView from './utils/outputView.js';
+
 export default str => {
   if(str.match(/[^0-9\.]/g)) return 'Enter only with numbers';
 
@@ -11,7 +14,12 @@ export default str => {
   }
 
   LIST.push(...new Array(MAX-2).fill(0));
-  fib(MAX);
 
-  return LIST.join('-');
+  let time = bench.start();
+  fib(MAX);
+  time = bench.end(time);
+
+  let result = LIST.join('-');
+
+  return outputView(result, time);
 }
