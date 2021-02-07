@@ -15,7 +15,6 @@ export default str => {
   const getMedian = values => {
     let middle = parseInt(values.length / 2);
     values.sort((a,b) => a - b);
-    console.log({middle})
     if(values.length % 2) return values[middle];
     return (values[middle - 1] + values[middle]) / 2;
   }
